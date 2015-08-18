@@ -1,14 +1,13 @@
 package com.mjc.gameframework.ScreenManager;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.google.common.eventbus.EventBus;
+import com.mjc.gameframework.Event.EventBus;
 
 import java.util.ArrayList;
 
 public class ScreenManager {
 
     ArrayList<Screen> screens;
-    EventBus bus;
 
     public static abstract class Screen{
         public static final int STATUS_INACTIVE = 0; //Don't render or process
@@ -16,14 +15,12 @@ public class ScreenManager {
         public static final int STATUS_PAUSED = 2;  //Don't process.  Do render.
         public static final int STATUS_ACTIVE = 3;  //Render and process.
         public int status;
-        public EventBus bus;
         public abstract void render(SpriteBatch batch);
         public abstract void process(float deltaTime);
 
         public final void deactivate(){
             status = STATUS_INACTIVE;
         }
-
         public final void hide(){
             status = STATUS_HIDDEN;
         }
@@ -38,7 +35,6 @@ public class ScreenManager {
 
     public ScreenManager(){
         screens = new ArrayList<Screen>();
-        bus = new EventBus();
     }
 
     public void addScreen(Screen s){
@@ -62,5 +58,7 @@ public class ScreenManager {
             }
         }
     }
+
+
 
 }

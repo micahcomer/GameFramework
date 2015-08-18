@@ -1,5 +1,6 @@
 package com.mjc.gameframework.Thread;
 
+import com.google.common.eventbus.EventBus;
 import com.mjc.gameframework.GameFramework;
 
 /**
