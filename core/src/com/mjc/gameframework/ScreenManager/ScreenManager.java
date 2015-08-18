@@ -1,7 +1,6 @@
 package com.mjc.gameframework.ScreenManager;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.mjc.gameframework.Event.EventBus;
 
 import java.util.ArrayList;
 
